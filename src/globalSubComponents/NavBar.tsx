@@ -14,14 +14,14 @@ import { FaUser } from "react-icons/fa";
 
 // Local Files
 import "./NavBar.css";
-import icon from "../globalAssets/icon.svg";
+import icon from "../globalAssets/logo.svg";
 import { RootState } from "../store/store";
 import { updateNavStatus } from "../store/navOpenStatusSlice";
 import { updateToLoginStatus } from "../store/toLoginSlice";
 import ButtonElement from "../globalElements/ButtonElement";
 import UserAvatar from "./UserAvatar";
 import { getCookie } from "../utils/cookies";
-const menuItems = ["Home", "Services", "About", "Contact", "Pricing", "Blog", "Log In"];
+const menuItems = ["Home", "Services", "About", "Contact", "Log In"];
 
 const NavBar = () => {
   const isLoggedIn = getCookie("token") ? true : false;
@@ -39,17 +39,18 @@ const NavBar = () => {
       classNames={{ base: "bg-[rgba(0,0,0,0.4)]" }}
     >
       <NavbarContent>
-        <NavbarMenuToggle aria-label={navOpenStatus ? "Close menu" : "Open menu"} className="lg:hidden text-white" />
-        <div className="bg-white hidden lg:block">
-          <Image width={60} src={icon} alt="logo" radius="none" />
-        </div>
+        <NavbarMenuToggle aria-label={navOpenStatus ? "Close menu" : "Open menu"} className="lg:hidden" />
+        <Image width={150} src={icon} alt="logo" radius="none" className="hidden lg:block" />
       </NavbarContent>
+
       <NavbarContent className="lg:hidden logo">
         <Link to="../Home">
-          <div className="bg-white p-[1rem] flex justify-center items-center max-h-[5rem] ribbon">
-            <Image width={60} src={icon} alt="logo" radius="none" />
-          </div>
+          <Image width={150} src={icon} alt="logo" radius="none" />
         </Link>
+      </NavbarContent>
+
+      <NavbarContent className="lg:hidden">
+        <div className="w-[5rem] h-[100%] bg-red"></div>
       </NavbarContent>
 
       <NavbarContent className="hidden lg:flex" justify="center">
@@ -106,7 +107,7 @@ const NavBar = () => {
         )}
       </NavbarContent>
 
-      <NavbarMenu className="mt-[1rem] bg-[rgba(0,0,0,0.4)] z-[200]">
+      <NavbarMenu className="mt-[4.5rem] bg-white z-[200]">
         {menuItems.map((item, index) => {
           return (
             <NavbarMenuItem key={`${item}-${index}`}>
