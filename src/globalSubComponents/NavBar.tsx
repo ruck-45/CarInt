@@ -10,10 +10,10 @@ import {
 } from "@nextui-org/react";
 import { useSelector, useDispatch } from "react-redux";
 import { Link } from "react-router-dom";
+import { FaUser } from "react-icons/fa";
 
 // Local Files
 import "./NavBar.css";
-import logo from "../globalAssets/logo.svg";
 import icon from "../globalAssets/icon.svg";
 import { RootState } from "../store/store";
 import { updateNavStatus } from "../store/navOpenStatusSlice";
@@ -34,9 +34,8 @@ const NavBar = () => {
       onMenuOpenChange={() => {
         dispatch(updateNavStatus(!navOpenStatus));
       }}
-      className="h-[5rem] nav z-[200]"
+      className="h-[5rem] nav z-[200] bg-white"
       maxWidth="xl"
-      shouldHideOnScroll
       classNames={{ base: "bg-[rgba(0,0,0,0.4)]" }}
     >
       <NavbarContent>
@@ -88,55 +87,24 @@ const NavBar = () => {
             CONTACT US
           </Link>
         </NavbarItem>
-        <NavbarItem>
-          <Link
-            to="../Pricing"
-            className={curTab === "Pricing" ? "active navActive flex flex-col px-[1rem]" : "notActive px-[1rem]"}
-          >
-            PRICING
-          </Link>
-        </NavbarItem>
-        <NavbarItem>
-          <Link
-            to="../Blog"
-            className={curTab === "Blog" ? "active navActive flex flex-col px-[1rem]" : "notActive px-[1rem]"}
-          >
-            BLOG
-          </Link>
-        </NavbarItem>
-      </NavbarContent>
-      {isLoggedIn ? (
-        <NavbarContent justify="end">
+        {isLoggedIn ? (
           <NavbarItem>
             <UserAvatar />
           </NavbarItem>
-        </NavbarContent>
-      ) : (
-        <NavbarContent justify="end">
+        ) : (
           <NavbarItem className="hidden lg:flex">
             <ButtonElement
               to="../Auth"
-              variant="bordered"
-              color="warning"
-              label="Login"
-              radius="full"
-              className="w-full px-[8px] py-[10px]"
+              variant="light"
+              label="LOGIN"
+              radius="sm"
+              className="w-full px-[8px] py-[10px] text-[1rem]"
+              startContent={<FaUser />}
               onClickFunction={() => dispatch(updateToLoginStatus(true))}
             />
           </NavbarItem>
-          <NavbarItem>
-            <ButtonElement
-              to="../Auth"
-              variant="solid"
-              color="warning"
-              label="Sign Up"
-              radius="full"
-              className="w-full px-[8px] py-[10px] font-semibold"
-              onClickFunction={() => dispatch(updateToLoginStatus(false))}
-            />
-          </NavbarItem>
-        </NavbarContent>
-      )}
+        )}
+      </NavbarContent>
 
       <NavbarMenu className="mt-[1rem] bg-[rgba(0,0,0,0.4)] z-[200]">
         {menuItems.map((item, index) => {

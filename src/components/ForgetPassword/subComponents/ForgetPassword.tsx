@@ -169,7 +169,7 @@ const ForgetPassword = () => {
       className="flex flex-col justify-center w-[22rem] sm:min-w-[27rem] p-12 m-2 gap-3 Auth rounded-3xl"
       onSubmit={handleSubmit}
     >
-      <Link to="../" className="mb-[2rem] flex items-center gap-[0.5rem] hover:gap-[1rem] duration-100 text-[#006FEE]">
+      <Link to="../" className="mb-[2rem] flex items-center gap-[0.5rem] hover:gap-[1rem] duration-100 text-[#0a97b0]">
         <FaArrowRightLong />
         <p>Home</p>
       </Link>

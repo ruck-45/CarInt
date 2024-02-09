@@ -221,7 +221,7 @@ const UserAuth = () => {
 
   return (
     <form className="flex flex-col justify-center sm:min-w-[27rem] p-12 gap-3 Auth rounded-3xl" onSubmit={handleSubmit}>
-      <Link to="../" className="mb-[2rem] flex items-center gap-[0.5rem] hover:gap-[1rem] duration-100 text-[#006FEE]">
+      <Link to="../" className="mb-[2rem] flex items-center gap-[0.5rem] hover:gap-[1rem] duration-100 text-[#0a97b0]">
         <FaArrowRightLong />
         <p>Home</p>
       </Link>
@@ -291,7 +291,7 @@ const UserAuth = () => {
       {toLogin ? (
         <p
           className="text-xs text-right cursor-pointer"
-          style={{ color: "#006FEE" }}
+          style={{ color: "#0a97b0" }}
           onClick={() => navigate("../ResetPassword")}
         >
           Forgot Password?
@@ -300,20 +300,14 @@ const UserAuth = () => {
       <Checkbox defaultSelected size="sm" className={toLogin ? "" : "hidden"} onChange={handleCheckboxChange}>
         Remember Me
       </Checkbox>
-      <Button
-        className="mt-2 mb-2"
-        color="primary"
-        variant="shadow"
-        type="submit"
-        isLoading={handleLoginButton}
-      >
+      <Button className="mt-2 mb-2" color="primary" variant="shadow" type="submit" isLoading={handleLoginButton}>
         Submit
       </Button>
       <p className="text-xs text-center">
         {toLogin ? "New to our platform?" : "Already have an account?"}
         &nbsp;
         <button
-          style={{ color: "#006FEE" }}
+          style={{ color: "#0a97b0" }}
           onClick={(e) => {
             changeAuthStatus(e);
           }}
