@@ -12,6 +12,7 @@ import { IoLocation } from "react-icons/io5";
 // Local Files
 import "./Footer.css";
 import logo from "../globalAssets/logo.svg";
+//
 
 const contactInfo = [
   {
