@@ -17,7 +17,7 @@ const Contact = () => {
   scrollTop(offset);
 
   return (
-    <div className="grid lg:grid-cols-2 justify-start">
+    <div className="lg:grid lg:grid-cols-2 flex flex-col justify-center  lg:px-[2rem]">
       <EmailForm />
       <Map />
     </div>
