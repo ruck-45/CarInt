@@ -31,19 +31,19 @@ const content = [
 const Service = () => {
   return (
     <>
-      <div className="flex flex-col justify-center items-center h-auto w-auto gap-2 px-[3rem]">
+      <div className="flex flex-col justify-center lg:items-start items-center h-auto w-auto gap-2 px-[2rem] md:px-[6rem]">
         <div>
           <h1 className="font-bold  text-4xl ">
-            Our <span className="text-blue-600">Services</span>
+            Our <span className="text-[#0a97b0] md:text-start text-center">Services</span>
           </h1>
         </div>
         <div className="py-[1rem]">
-          <p className=" font-normal text-center text-gray-600">
+          <p className=" font-normal lg:text-start text-center text-gray-600">
             There are many variations of passages of Lorem Ipsum available, but the majority have suffered alteration
           </p>
         </div>
       </div>
-      <div className="px-[5rem] py-[2rem] xl:grid xl:grid-cols-2 gap-4 flex flex-col justify-center items-center">
+      <div className="md:px-[6rem]  px-[2rem] py-[2rem] xl:grid xl:grid-cols-2 gap-4 xl:gap-x-2 xl:gap-y-7 flex flex-col justify-center lg:items-start items-center">
         {content.map((e, i) => (
           <Cards key={i} title={e.title} des={e.des} photo={e.pic} />
         ))}
