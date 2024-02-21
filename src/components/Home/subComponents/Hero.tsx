@@ -26,8 +26,9 @@ const features = [
 
 const Hero = () => {
   var settings: Settings = {
+    
     infinite: true,
-    speed: 500,
+    speed: 100,
     slidesToShow: 1,
     slidesToScroll: 1,
     autoplay: true,
@@ -35,6 +36,31 @@ const Hero = () => {
     className: "max-w-[65rem] mx-auto",
     focusOnSelect: true,
     arrows: false,
+    dots: true,
+
+    appendDots: (dots) => (
+      <div
+        style={{
+          borderRadius: "10px",
+          padding: "10px",
+        }}
+      >
+        <ul style={{ margin: "-4px" }}> {dots} </ul>
+      </div>
+    ),
+    customPaging: (i) => (
+      <div
+        style={{
+          borderRadius: "100%",
+          backgroundColor: "white",
+          height: "1rem",
+          width: "1rem",
+          color: "",
+        }}
+      >
+        {}
+      </div>
+    ),
   };
 
   return (

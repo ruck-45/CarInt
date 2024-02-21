@@ -8,6 +8,8 @@ import Hero from "./subComponents/Hero";
 import Track from "./subComponents/Track";
 import Services from "../Services/Services";
 import About from "../About/About";
+import Carasouel from "./subComponents/Carasouel";
+
 
 const Home = () => {
   const dispatch = useDispatch();
@@ -20,6 +22,7 @@ const Home = () => {
       <Services/>
       <About/>
       <Track />
+      <Carasouel/>
     </div>
   );
 };
